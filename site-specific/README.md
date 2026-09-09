@@ -37,6 +37,16 @@ These are ordinary Hugo page resources and do not require a downstream theme ove
 Source declarations refer to executable adapters under `extensions/source-adapters/` from the downstream repository root.
 Adapter code and the Orinoco Lite scaffold remain outside this subtree.
 
+## Intentional presentation differences
+
+These choices are specific to CON; shared behavior follows the [Orinoco Lite design charter](https://github.com/ORINOCO-Lite/orinoco-lite-dev/blob/main/docs/project-design.md) and its contracts.
+
+- **Grouped people directory.** CON deliberately retains Centroids, Collaborators, Affiliated Faculty, and Emeritus instead of the upstream's single people listing.
+  [The people page](content/persons/_index.md) owns the group membership and display order; preserve them during presentation and release updates.
+  The “Other people” section keeps additional records visible when no group placement has been supplied, without asserting a role or involvement status.
+  Do not change groups or membership merely to match upstream.
+  Make proposed editorial changes explicit in a content pull request for maintainer review, using the existing `people-group` shortcode rather than a copied theme layout.
+
 ## Subtree integration
 
 Import this history into a new downstream without squashing it:
