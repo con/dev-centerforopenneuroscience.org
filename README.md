@@ -21,6 +21,7 @@ The source boundary is:
 - `extensions/` — optional metadata acquisition and curation executables that never ship with or execute during the website build.
 
 See [getting started](docs/getting-started.md), [ownership](docs/ownership.md), and [custom-domain setup](docs/custom-domain.md).
+Pull requests also get a disposable Netlify rendering; see [pull-request previews](docs/pr-previews.md).
 
 `site-specific/` is an unsquashed subtree of [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific).
 Website changes are reviewed here, while the focused repository distributes accepted subtree history to other projections.
