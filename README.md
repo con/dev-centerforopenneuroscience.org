@@ -22,6 +22,7 @@ The source boundary is:
 - `extensions/` — optional metadata acquisition and curation executables that never ship with or execute during the website build.
 
 See [getting started](docs/getting-started.md), [ownership](docs/ownership.md), and [custom-domain setup](docs/custom-domain.md).
+Pull requests also get a disposable Netlify rendering; see [pull-request previews](docs/pr-previews.md).
 
 The released package is the single authority for the upstream website and theme pins.
 The downstream selects its package, template, and workflow releases exactly in `orinoco.lock` and `.copier-answers.yml`.

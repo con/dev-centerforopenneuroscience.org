@@ -5,5 +5,5 @@ project_slug: dev-centerforopenneuroscience.org
 site_description: The Center for Open Neuroscience brings open practices into the
   everyday work of neuroscience.
 site_base_url: https://dev.centerforopenneuroscience.org/
-pr_previews: none
+pr_previews: netlify
 
