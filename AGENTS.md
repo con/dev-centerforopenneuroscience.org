@@ -3,7 +3,7 @@
 ## Scope and review
 
 This repository publishes the Center for Open Neuroscience website from the released Orinoco Lite components selected in `orinoco.lock` and `pixi.lock`.
-Read [ownership](docs/ownership.md), `site-specific/site.yaml`, and the current diff before editing.
+Read [ownership](docs/ownership.md), the [intentional presentation differences](site-specific/README.md#intentional-presentation-differences), `site-specific/site.yaml`, and the current diff before editing.
 Use the existing maintenance, content, or adapter skill for the applicable work; the site policy here governs how those workflows apply.
 
 Agents may prepare ordinary, attributed metadata and content pull requests for maintainers to review and merge.
@@ -17,7 +17,8 @@ Do not approve, merge, or deploy a proposal on a maintainer's behalf.
 
 Keep declarative site content in `site-specific/` and executable metadata adapters in `extensions/source-adapters/`.
 Reuse the selected upstream presentation and supported site configuration; propose reusable rendering fixes upstream instead of copying theme implementation into this site.
-Show existing people without requiring a current/former classification or inventing involvement status.
+Preserve the documented people groups, membership, and order; do not flatten the directory during upstream alignment.
+Keep additional people visible without inventing a group placement or involvement status.
 The homepage retains useful contribution and support material; the former standalone engagement and support routes are intentionally retired.
 Do not recreate legacy routes, aliases, or redirects merely to reproduce the previous website.
 
