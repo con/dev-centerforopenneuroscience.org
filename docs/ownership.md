@@ -18,3 +18,20 @@ For a grouped people index, use `layout: editorial` and the `people-group` short
 The shortcode reuses the upstream cards and preserves the supplied order.
 The `graph` shortcode embeds the upstream graph on an editorial page.
 Set `params.hideGraph: true` on an editorial homepage to show its text alone.
+
+## `site-specific` subtree
+
+The website repository is the operational editing and review surface for changes submitted through the website.
+The standalone [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific) repository retains the focused history and distributes the same inputs to other projections.
+The subtree is therefore integrated without squashing.
+
+After a commit on `main` changes `site-specific/`, the downstream-specific export workflow splits that prefix and pushes it to the standalone repository.
+The push must be a fast-forward from its current `main`; divergence stops the workflow rather than overwriting either history.
+Pull and review any intentional standalone change in this repository before accepting further website edits.
+
+The workflow uses the existing `orinoco-lite-curation-review` GitHub App to mint a token limited to `ORINOCO-Lite/con-site-specific`.
+The repository secret `ORINOCO_LITE_APP_PRIVATE_KEY` must contain a private key for that App.
+
+A commit must change either `site-specific/` or files owned by the parent repository, never both.
+This boundary makes every subtree export independent of framework, adapter, workflow, and documentation changes.
+Install the repository hook with `pixi run hooks-install` to enforce the boundary locally.

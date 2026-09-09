@@ -2,8 +2,7 @@
 
 This is an Orinoco Lite metadata-driven website.
 Set its public identity in `site-specific/site.yaml`.
-The starter records and `/explore` page build and preview immediately; replace
-them with reviewed site metadata and editorial content before publishing.
+The starter records and `/explore` page build and preview immediately; replace them with reviewed site metadata and editorial content before publishing.
 Orinoco Lite resolves its pinned upstream presentation and composes it with this scaffold's small `.orinoco-lite/presentation/` adapter, its bounded `.orinoco-lite/materialized-presentation/upstream/` asset overlay, and the repository's declarative `site-specific/` inputs.
 
 ```console
@@ -22,6 +21,10 @@ The source boundary is:
 - `extensions/` — optional metadata acquisition and curation executables that never ship with or execute during the website build.
 
 See [getting started](docs/getting-started.md), [ownership](docs/ownership.md), and [custom-domain setup](docs/custom-domain.md).
+
+`site-specific/` is an unsquashed subtree of [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific).
+Website changes are reviewed here and exported after merge so the focused repository remains reusable by other projections.
+See [ownership](docs/ownership.md#site-specific-subtree) for the commit boundary and synchronization policy.
 
 The released package is the single authority for the upstream website and theme pins.
 The downstream selects its package, template, and workflow releases exactly in `orinoco.lock` and `.copier-answers.yml`.
