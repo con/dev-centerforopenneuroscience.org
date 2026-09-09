@@ -1,0 +1,7 @@
+{
+  "app_name": "Center for Open Neuroscience source metadata review",
+  "format": "orinoco-curation-review-config",
+  "repository": "con/dev-centerforopenneuroscience.org",
+  "service_origin": "https://orinoco-curation-review.pages.dev",
+  "version": 1
+}
