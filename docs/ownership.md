@@ -25,12 +25,9 @@ The website repository is the operational editing and review surface for changes
 The standalone [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific) repository retains the focused history and distributes the same inputs to other projections.
 The subtree is therefore integrated without squashing.
 
-After a commit on `main` changes `site-specific/`, the downstream-specific export workflow splits that prefix and pushes it to the standalone repository.
-The push must be a fast-forward from its current `main`; divergence stops the workflow rather than overwriting either history.
+Synchronization uses a downstream-specific export workflow that splits `site-specific/` after an accepted change reaches `main` and pushes the focused history to the standalone repository.
+The push must be a fast-forward from its current `main`; divergence must stop the workflow rather than overwrite either history.
 Pull and review any intentional standalone change in this repository before accepting further website edits.
-
-The workflow uses the existing `orinoco-lite-curation-review` GitHub App to mint a token limited to `ORINOCO-Lite/con-site-specific`.
-The repository secret `ORINOCO_LITE_APP_PRIVATE_KEY` must contain a private key for that App.
 
 A commit must change either `site-specific/` or files owned by the parent repository, never both.
 This boundary makes every subtree export independent of framework, adapter, workflow, and documentation changes.

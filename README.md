@@ -23,7 +23,7 @@ The source boundary is:
 See [getting started](docs/getting-started.md), [ownership](docs/ownership.md), and [custom-domain setup](docs/custom-domain.md).
 
 `site-specific/` is an unsquashed subtree of [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific).
-Website changes are reviewed here and exported after merge so the focused repository remains reusable by other projections.
+Website changes are reviewed here, while the focused repository distributes accepted subtree history to other projections.
 See [ownership](docs/ownership.md#site-specific-subtree) for the commit boundary and synchronization policy.
 
 The released package is the single authority for the upstream website and theme pins.
