@@ -1,4 +1,4 @@
-_commit: v0.3.0rc3
+_commit: v0.3.0rc3-6-g0f2ee96
 _src_path: gh:ORINOCO-Lite/orinoco-lite-template
 project_name: Center for Open Neuroscience
 project_slug: dev-centerforopenneuroscience.org
@@ -6,4 +6,7 @@ site_description: The Center for Open Neuroscience brings open practices into th
   everyday work of neuroscience.
 site_base_url: https://dev.centerforopenneuroscience.org/
 pr_previews: netlify
+package_repository: https://github.com/ORINOCO-Lite/orinoco-lite-dev.git
+package_revision: 300eff672931cddd1895edc163ffa43059a6bb9f
+include_site_specific: true
 
