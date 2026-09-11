@@ -11,7 +11,7 @@ pyyaml = "==6.0.2"
 pre-commit = "==4.3.0"
 
 [pypi-dependencies]
-orinoco-lite = { url = "https://github.com/ORINOCO-Lite/orinoco-lite-dev/releases/download/v0.3.0rc5/orinoco_lite-0.3.0rc5-py3-none-any.whl#sha256=55f67bd3dcc1e5d1f94d40436721913d52eb22ab918cb5c36a528db6853d3b0e" }
+orinoco-lite = { url = "https://github.com/ORINOCO-Lite/orinoco-lite-dev/releases/download/v0.3.0rc7/orinoco_lite-0.3.0rc7-py3-none-any.whl#sha256=2127b2b95ef0a9c7c9573fdc064924601d3e61c95752a6a7e9f479273f883ba9" }
 datalad = ">=1.6.2,<2"
 snapper-fmt = "==0.10.0"
 
