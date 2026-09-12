@@ -1,0 +1,10 @@
+version = 1
+downstream_repository = "con/dev-centerforopenneuroscience.org"
+
+[package]
+repository = "ORINOCO-Lite/orinoco-lite-dev"
+commit = "19628c3a16429a6a7ac7cecedabce3430881066e"
+
+[template]
+repository = "ORINOCO-Lite/orinoco-lite-template"
+commit = "a4794a095d0bb6462c02353f0277747cae64ab83"
