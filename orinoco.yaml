@@ -4,3 +4,7 @@ paths:
   records: site-specific/metadata/records
   editorial: site-specific/content
   extensions: extensions
+
+site:
+  repository: con/dev-centerforopenneuroscience.org
+  curation_service: https://orinoco-curation-review.pages.dev
