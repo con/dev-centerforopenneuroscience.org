@@ -8,12 +8,15 @@ python = ">=3.12,<3.13"
 copier = "==9.10.3"
 hugo = "==0.154.5"
 pyyaml = "==6.0.2"
+pre-commit = "==4.3.0"
 
 [pypi-dependencies]
 orinoco-lite = { git = "https://github.com/ORINOCO-Lite/orinoco-lite-dev.git", rev = "8619c48cac9493c6f3d874ef0a68f5948f6fd2f9" }
 datalad = ">=1.6.2,<2"
+snapper-fmt = "==0.10.0"
 
 [tasks]
 build = "orinoco-lite build --destination build/site --base-url /"
 build-pages = "orinoco-lite build --destination build/pages --publication-bundle build/pages-publication.bundle"
 serve = "orinoco-lite serve --directory build/site --port 8765"
+hooks-install = "pre-commit install"
