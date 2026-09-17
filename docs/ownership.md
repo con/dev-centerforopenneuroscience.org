@@ -18,3 +18,11 @@ For a grouped people index, use `layout: editorial` and the `people-group` short
 The shortcode reuses the upstream cards and preserves the supplied order.
 The `graph` shortcode embeds the upstream graph on an editorial page.
 Set `params.hideGraph: true` on an editorial homepage to show its text alone.
+
+## `site-specific` submodule
+
+The metadata repository owns site inputs and their history.
+The website records the exact metadata commit through its `site-specific` gitlink.
+Review input changes in `ORINOCO-Lite/con-site-specific`, then review the website gitlink update against the composed site.
+The curation App must have access to both repositories for coordinated browser edits and source-adapter proposals.
+The website no longer imports or exports subtree history.

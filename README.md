@@ -27,3 +27,7 @@ Pull requests also get a disposable Netlify rendering; see [pull-request preview
 The released package is the single authority for the upstream website and theme pins.
 The downstream selects its package, template, and workflow releases exactly in `orinoco.lock` and `.copier-answers.yml`.
 Resources and specifications required to build or operate Orinoco Lite are internal to the package and share its version and integrity boundary.
+
+`site-specific/` is a pinned submodule of [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific).
+After cloning, run `git submodule update --init --recursive`.
+See [ownership](docs/ownership.md#site-specific-submodule) for the review boundary.
