@@ -13,19 +13,22 @@ Its production and branch-deploy `ignore` commands cancel every other build, so 
    Netlify reads `netlify.toml`, so leave the build command and publish directory empty in the import form.
 2. Keep the repository's default branch as the production branch.
    Netlify cancels those builds and only builds pull requests.
-3. Confirm that deploy previews are enabled for pull requests in **Site configuration → Build & deploy → Continuous deployment**.
+3. Deploy previews are enabled by default for connected repositories.
+   To change that setting, use **Project configuration → Build & deploy → Continuous Deployment → Branches and deploy contexts**.
+   Preview Server settings do not control deploy previews.
 4. Open a pull request and check the Netlify status on it.
    The preview URL is `https://deploy-preview-<number>--<netlify-site>.netlify.app/`.
 
 ## What a preview build does
 
-The build command installs the same reviewed Pixi release the workflows use, with Pixi's upstream installer, and runs `pixi run --frozen build`, this repository's ordinary root-relative build.
+The build command installs the current Pixi release with Pixi's upstream installer and runs `pixi run build` with `PIXI_FROZEN=true`, this repository's ordinary root-relative build.
 A preview is therefore exactly the site that `pixi run build` and `pixi run serve` produce locally, from the same frozen lock, and needs no preview-specific tooling.
 
 A preview is not the deployed site:
 
 - it is served from the deploy-preview URL rather than `identity.base_url`, so its pages are root-relative rather than canonical;
-- it carries no trusted GitHub repository identity, so `/edit/` and `/review/` keep **Download bundle** and cannot start a **Propose via GitHub** submission; and
+- Netlify supplies read-only repository, pull-request, and exact-commit coordinates to the build, but no GitHub credential;
+- `/edit/` may use **Propose via GitHub** only for its own open draft pull request after the curation service verifies a successful Netlify deployment for the exact head commit and preview origin; and
 - it is rebuilt from scratch for every pull-request revision.
 
 ## Before enabling previews on a public repository
