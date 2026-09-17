@@ -19,16 +19,10 @@ The shortcode reuses the upstream cards and preserves the supplied order.
 The `graph` shortcode embeds the upstream graph on an editorial page.
 Set `params.hideGraph: true` on an editorial homepage to show its text alone.
 
-## `site-specific` subtree
+## `site-specific` submodule
 
-The website repository is the operational editing and review surface for changes submitted through the website.
-The standalone [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific) repository retains the focused history and distributes the same inputs to other projections.
-The subtree is therefore integrated without squashing.
-
-Synchronization uses a downstream-specific export workflow that splits `site-specific/` after an accepted change reaches `main` and pushes the focused history to the standalone repository.
-The push must be a fast-forward from its current `main`; divergence must stop the workflow rather than overwrite either history.
-Pull and review any intentional standalone change in this repository before accepting further website edits.
-
-A commit must change either `site-specific/` or files owned by the parent repository, never both.
-This boundary makes every subtree export independent of framework, adapter, workflow, and documentation changes.
-Install the repository hook with `pixi run hooks-install` to enforce the boundary locally.
+The metadata repository owns site inputs and their history.
+The website records the exact metadata commit through its `site-specific` gitlink.
+Review input changes in `ORINOCO-Lite/con-site-specific`, then review the website gitlink update against the composed site.
+The curation App must have access to both repositories for coordinated browser edits and source-adapter proposals.
+The website no longer imports or exports subtree history.

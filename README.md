@@ -6,7 +6,6 @@ The starter records and `/explore` page build and preview immediately; replace t
 Orinoco Lite resolves its pinned upstream presentation and composes it with this scaffold's small `.orinoco-lite/presentation/` adapter, its bounded `.orinoco-lite/materialized-presentation/upstream/` asset overlay, and the repository's declarative `site-specific/` inputs.
 
 ```console
-pixi run validate
 pixi run build
 pixi run serve
 ```
@@ -23,10 +22,10 @@ The source boundary is:
 See [getting started](docs/getting-started.md), [ownership](docs/ownership.md), and [custom-domain setup](docs/custom-domain.md).
 Pull requests also get a disposable Netlify rendering; see [pull-request previews](docs/pr-previews.md).
 
-`site-specific/` is an unsquashed subtree of [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific).
-Website changes are reviewed here, while the focused repository distributes accepted subtree history to other projections.
-See [ownership](docs/ownership.md#site-specific-subtree) for the commit boundary and synchronization policy.
+The selected package revision is the single authority for the upstream website and theme pins.
+The downstream selects its package through Pixi, its template through `.copier-answers.yml`, and actions through pinned workflow references.
+Resources and specifications required to build or operate Orinoco Lite are internal to the selected package commit.
 
-The released package is the single authority for the upstream website and theme pins.
-The downstream selects its package, template, and workflow releases exactly in `orinoco.lock` and `.copier-answers.yml`.
-Resources and specifications required to build or operate Orinoco Lite are internal to the package and share its version and integrity boundary.
+`site-specific/` is a pinned submodule of [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific).
+After cloning, run `git submodule update --init --recursive`.
+See [ownership](docs/ownership.md#site-specific-submodule) for the review boundary and [the history rewrite plan](docs/agents/history-rewrite.md) for the proposed removal of old subtree history.
