@@ -20,3 +20,9 @@ build-pages = "orinoco-lite build --destination build/pages --publication-bundle
 serve = "orinoco-lite serve --directory build/site --port 8765"
 dev-enable = 'datalad run --explicit --output pixi.toml --output pixi.lock --output .orinoco-lite/dev -m "chore: enable editable Orinoco Lite" -- orinoco-lite dev enable'
 dev-disable = 'datalad run --explicit --output pixi.toml --output pixi.lock --output .orinoco-lite/dev -m "chore: disable editable Orinoco Lite" -- orinoco-lite dev disable'
+
+[target.linux-64.dependencies]
+git-annex = "==10.20260601"
+
+[target.osx-arm64-macos-14-0.pypi-dependencies]
+git-annex = "==10.20260601"
