@@ -51,7 +51,17 @@ page_ref = "/explore/"
 icon = "circle-info"
 weight = 40
 
+[[tool.orinoco.site.footer_navigation]]
+name = "Contact"
+page_ref = "/contact/"
+
 [tool.orinoco.site.appearance]
-color_scheme = "fire"
+color_scheme = "con"
 default_appearance = "light"
 header_layout = "hybrid"
+
+[tool.orinoco.github]
+repository = "con/dev-centerforopenneuroscience.org"
+
+[tool.orinoco.media]
+annex = true
