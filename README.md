@@ -1,0 +1,25 @@
+# Orinoco Lite site
+
+This is an Orinoco Lite metadata-driven website.
+Set its public identity in `pyproject.toml` under `[tool.orinoco.site]`.
+The starter records build immediately; replace them with your own metadata to populate the site.
+Custom pages and layouts are optional.
+
+```console
+pixi run build
+pixi run serve
+```
+
+The source boundary is:
+
+- `site-specific/metadata/` — semantic records and curation annotations;
+- `site-specific/content/` — editorial Markdown;
+- `site-specific/assets/` and `site-specific/static/` — declared website data;
+- `pyproject.toml` — runtime settings, with public identity, navigation, and appearance under `[tool.orinoco.site]`;
+- `site-specific/overrides/` — explicit declarative config, layout, or static overrides; and
+- `extensions/` — optional metadata acquisition and curation executables that never ship with or execute during the website build.
+
+See [getting started](docs/getting-started.md), [ownership](docs/ownership.md), and [custom-domain setup](docs/custom-domain.md). Pull requests also get a disposable Netlify rendering; see [pull-request previews](docs/pr-previews.md).
+
+Package versions are selected through Pixi and template versions through `.copier-answers.yml`.
+See [template updates](docs/template-updates.md) for the supported update commands.

@@ -1,0 +1,22 @@
+[workspace]
+requires-pixi = ">=0.76"
+name = "dev-centerforopenneuroscience.org"
+channels = ["conda-forge"]
+platforms = [{ platform = "osx-arm64", macos = "14.0" }, "linux-64"]
+
+[dependencies]
+python = ">=3.12,<3.13"
+copier = "==9.10.3"
+hugo = "==0.154.5"
+pyyaml = "==6.0.2"
+
+[pypi-dependencies]
+orinoco-lite = { git = "https://github.com/ORINOCO-Lite/orinoco-lite-dev.git", rev = "c762bf2e743473fb7198f2cd0b16d029d78eadf8" }
+datalad = ">=1.6.2,<2"
+
+[tasks]
+build = "orinoco-lite build --destination build/site --base-url /"
+build-pages = "orinoco-lite build --destination build/pages --publication-bundle build/pages-publication.bundle"
+serve = "orinoco-lite serve --directory build/site --port 8765"
+dev-enable = 'datalad run --explicit --output pixi.toml --output pixi.lock --output .orinoco-lite/dev -m "chore: enable editable Orinoco Lite" -- orinoco-lite dev enable'
+dev-disable = 'datalad run --explicit --output pixi.toml --output pixi.lock --output .orinoco-lite/dev -m "chore: disable editable Orinoco Lite" -- orinoco-lite dev disable'
