@@ -31,7 +31,7 @@ def neutralize_reviewed_adapter_state(
             raise ValueError("decision-cache paths must be repository-relative")
         (root / relative).unlink(missing_ok=True)
 
-    annotations = root / "site-specific/metadata/overlays/annotations"
+    annotations = root / "site-specific/metadata/overlays/machine-provenance-annotations"
     records = root / "site-specific/metadata/records"
     if not annotations.is_dir():
         return 0

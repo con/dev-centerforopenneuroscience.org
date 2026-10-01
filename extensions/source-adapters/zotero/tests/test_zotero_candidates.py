@@ -84,12 +84,11 @@ def copy_zotero_fixture(source: Path, destination: Path) -> None:
 def prepared_root(destination: Path) -> Path:
     root = destination / "consumer"
     copy_zotero_fixture(ROOT, root)
-    shutil.copyfile(ROOT / "orinoco.yaml", root / "orinoco.yaml")
-    shutil.copyfile(ROOT / "site-specific/site.yaml", root / "site-specific/site.yaml")
+    shutil.copyfile(ROOT / "pyproject.toml", root / "pyproject.toml")
     shutil.copytree(ROOT / "site-specific/metadata/records", root / "site-specific/metadata/records")
-    annotations = ROOT / "site-specific/metadata/overlays/annotations"
+    annotations = ROOT / "site-specific/metadata/overlays/machine-provenance-annotations"
     if annotations.is_dir():
-        shutil.copytree(annotations, root / "site-specific/metadata/overlays/annotations")
+        shutil.copytree(annotations, root / "site-specific/metadata/overlays/machine-provenance-annotations")
     neutralize_reviewed_adapter_state(
         root,
         adapter_agent_pids=REVIEWED_ADAPTER_AGENT_PIDS,

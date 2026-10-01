@@ -115,8 +115,7 @@ class ZoteroAdapterContractTests(unittest.TestCase):
             (records / "XYZPerson/person.yaml").write_text(
                 "pid: person\nschema_type: dlthings:Person\n", encoding="utf-8"
             )
-            shutil.copyfile(ROOT / "orinoco.yaml", root / "orinoco.yaml")
-            shutil.copyfile(ROOT / "site-specific/site.yaml", root / "site-specific/site.yaml")
+            shutil.copyfile(ROOT / "pyproject.toml", root / "pyproject.toml")
             destination = root / "build/index"
             index = zotero.export_canonical_json(root, destination)
             self.assertEqual(set(index), {"XYZPerson"})
