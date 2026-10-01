@@ -45,6 +45,9 @@ A separate fresh dataset exercises the corresponding instantiation pattern:
 5. Activate the generated site's locked Pixi environment and validate separately.
 
 The fresh and updated instances have identical site configuration and content trees.
+Replaying the population and settings commands in another checkout reproduces the fresh instance's complete Git tree exactly.
+Inspect `datalad rerun --report` before replay: an unsquashed subtree imports older history, so bound the population wrapper with `--since <run>^2 <run>` to select only that recorded operation.
+Replay still requires the selected software and remote source to be available.
 The fresh instance captures website preparation, not a fresh metadata acquisition or a reconstruction of earlier content provenance.
 It does not contain the existing dev site's source-adapter extensions.
 German API capture, JSONL import from that API, authored German site import, and Annex media retrieval do not participate.
