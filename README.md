@@ -1,12 +1,11 @@
 # Orinoco Lite site
 
 This is an Orinoco Lite metadata-driven website.
-Set its public identity in `site-specific/site.yaml`.
-The starter records and `/explore` page build and preview immediately; replace them with reviewed site metadata and editorial content before publishing.
-Orinoco Lite resolves its pinned upstream presentation and composes it with this scaffold's small `.orinoco-lite/presentation/` adapter, its bounded `.orinoco-lite/materialized-presentation/upstream/` asset overlay, and the repository's declarative `site-specific/` inputs.
+Set its public identity in `pyproject.toml` under `[tool.orinoco.site]`.
+The starter records build immediately; replace them with your own metadata to populate the site.
+Custom pages and layouts are optional.
 
 ```console
-pixi run validate
 pixi run build
 pixi run serve
 ```
@@ -16,17 +15,11 @@ The source boundary is:
 - `site-specific/metadata/` — semantic records and curation annotations;
 - `site-specific/content/` — editorial Markdown;
 - `site-specific/assets/` and `site-specific/static/` — declared website data;
-- `site-specific/site.yaml` — identity, navigation, and supported presentation choices;
+- `pyproject.toml` — runtime settings, with public identity, navigation, and appearance under `[tool.orinoco.site]`;
 - `site-specific/overrides/` — explicit declarative config, layout, or static overrides; and
 - `extensions/` — optional metadata acquisition and curation executables that never ship with or execute during the website build.
 
-See [getting started](docs/getting-started.md), [ownership](docs/ownership.md), and [custom-domain setup](docs/custom-domain.md).
-Pull requests also get a disposable Netlify rendering; see [pull-request previews](docs/pr-previews.md).
+See [getting started](docs/getting-started.md), [ownership](docs/ownership.md), and [custom-domain setup](docs/custom-domain.md). Pull requests also get a disposable Netlify rendering; see [pull-request previews](docs/pr-previews.md).
 
-`site-specific/` is an unsquashed subtree of [`ORINOCO-Lite/con-site-specific`](https://github.com/ORINOCO-Lite/con-site-specific).
-Website changes are reviewed here, while the focused repository distributes accepted subtree history to other projections.
-See [ownership](docs/ownership.md#site-specific-subtree) for the commit boundary and synchronization policy.
-
-The released package is the single authority for the upstream website and theme pins.
-The downstream selects its package, template, and workflow releases exactly in `orinoco.lock` and `.copier-answers.yml`.
-Resources and specifications required to build or operate Orinoco Lite are internal to the package and share its version and integrity boundary.
+Package versions are selected through Pixi and template versions through `.copier-answers.yml`.
+See [template updates](docs/template-updates.md) for the supported update commands.
