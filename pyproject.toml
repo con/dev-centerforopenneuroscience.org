@@ -19,3 +19,9 @@ repository = "con/dev-centerforopenneuroscience.org"
 
 [tool.orinoco.media]
 annex = true
+
+[tool.orinoco.operations]
+shacl_materialization = true
+automated_curation = true
+template_updates = true
+preview_editing = true
