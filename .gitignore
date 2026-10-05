@@ -14,3 +14,6 @@ __pycache__/
 
 # Tracked Orinoco support files live under .orinoco-lite/. Generated projection,
 # downloads, and caches remain ignored.
+
+# Locally resolved development environment.
+/pixi.lock
