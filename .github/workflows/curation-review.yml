@@ -45,7 +45,6 @@ jobs:
         with:
           cache: false
           locked: false
-          cache: false
 
       # The App grants repository write access only after this step succeeds.
       - name: Validate and record the composed adapter result
